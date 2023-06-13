@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const connect = async () => {
   try {
-    return mongoose.connect("mongodb+srv://debasishbihari:debasishbihari@cluster0.ocr8wsm.mongodb.net/todos");
+    return mongoose.connect("mongodb+srv://debasishbihari:debasishbihari@cluster0.ocr8wsm.mongodb.net/todos?retryWrites=true&w=majority");
   } catch (e) {
     console.log(e);
     process.exit();

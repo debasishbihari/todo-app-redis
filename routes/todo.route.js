@@ -6,9 +6,9 @@ const app = express.Router();
 
 app.get("/", async (req, res) => {
   try {
-   // const allTodo = await ToddoModel.find();
+    const allTodo = await ToddoModel.find();
 
-    return res.send("Debasish");
+    return res.send({ allTodo });
   } catch (e) {
     return res.send(e.message);
   }
