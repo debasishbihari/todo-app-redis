@@ -35,7 +35,7 @@ app.post("/create", async (req, res) => {
 app.patch("/:id", async (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
-  console.log(status);
+  
   try {
     const newTodo = await ToddoModel.findOne({ _id: id });
     if (!newTodo) {
@@ -61,7 +61,6 @@ app.patch("/:id", async (req, res) => {
 app.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { title,description } = req.body;
-  console.log(status);
   try {
     const newTodo = await ToddoModel.findOne({ _id: id });
     if (!newTodo) {
