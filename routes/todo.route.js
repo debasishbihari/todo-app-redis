@@ -85,14 +85,13 @@ app.put("/:id", async (req, res) => {
 app.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const { title,description } = req.body;
-  console.log(status);
   try {
     const newTodo = await ToddoModel.findOne({ _id: id });
     if (!newTodo) {
       return res.send("there is no toddo with the given id : ", id);
     }
 
-    let updatedTodo = await ToddoModel.findByIdAndDelete({
+     await ToddoModel.findByIdAndDelete({
       _id: id,
     });
 
